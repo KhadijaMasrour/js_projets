@@ -37,7 +37,7 @@ function ajouter_employé(e){
     }
     const lnom= /^[A-Za-z]+$/;
     const lprenom=/^[A-Za-z]+$/;  
-    const lpost=/^[A-Za-z]+[A-Za-z]*[A-Za-z]*$/;  
+    const lpost=/^[A-Za-z]+ *[A-Za-z]* *[A-Za-z]*$/;  
     const lsalaire=/\d{4,6}$/;  
 
     let rep="yes";
@@ -51,34 +51,42 @@ function ajouter_employé(e){
 
 
     if(lprenom.test(PRENOM.value)===false){
-        console.log(3)
         document.getElementById("errPrenom").textContent = "Le prénom est obligatoire."; document.getElementById("errPrenom").style.color = "red";
         PRENOM.style.border="1px solid red";
         PRENOM.style.background=" #fff2f3";
         rep="no";
     }
 
-    if(lpost.test(!POSTE.value)===false){
-        document.getElementById("errPost").textContent = "Veuillez saisir un poste valide."; document.getElementById("errPost").style.color = "red";
+    if(lpost.test(POSTE.value)===false){
+        document.getElementById("errPoste").textContent = "Veuillez saisir un poste valide."; document.getElementById("errPoste").style.color = "red";
         POSTE.style.border="1px solid red";
         POSTE.style.background=" #fff2f3";
         rep="no";
     }
 
-    if(lsalaire.test(SALAIRE.value)===false){
+    if(SALAIRE.value<1000 || SALAIRE.value>1000000){
         document.getElementById("errSalaire").textContent = "Veuillez saisir un salaire valide."; document.getElementById("errSalaire").style.color = "red";
         SALAIRE.style.border="1px solid red";
         SALAIRE.style.background=" #fff2f3";
         rep="no";
     }
 
+    for(let i = 0 ; i < employés.length ; i++){
+            if(employés[i].nom==NOM.value && employés[i].prenom==PRENOM.value){
+                document.getElementById("errPrenom").textContent = "Le prénom est dèja utilisée."; document.getElementById("errPrenom").style.color = "red";
+                PRENOM.style.border="1px solid red";
+                PRENOM.style.background=" #fff2f3";
+                rep="no";
+                document.getElementById("errNom").textContent = "Le nom est dèja utilisée."; document.getElementById("errNom").style.color = "red";
+                NOM.style.border="1px solid red";
+                NOM.style.background=" #fff2f3";
+                
+            }
+        }
+
     if(rep=="no"){
         rep="no"
-        ID.value=""
-        NOM.value=""
-        PRENOM.value=""
-        POSTE.value=""
-        SALAIRE.value=""
+        
     }else{
         employés.push(nv_employé)
         afficher()
@@ -91,7 +99,7 @@ function ajouter_employé(e){
 function modifier_infos_employé(e){
     e.preventDefault()
     for(i=0;i<employés.length;i++){
-        if (ID.value==employés[i].id){
+        if (ID.textContent==employés[i].id){
             employés[i].id=i;
             employés[i].nom=NOM.value;
             employés[i].prenom=PRENOM.value;
@@ -149,7 +157,7 @@ function afficher(){
 function remplirInputs(idd){
     for(i=0;i<employés.length;i++){
         if(idd==employés[i].id){
-            ID.value=employés[i].id
+            ID.textContent=employés[i].id
             NOM.value=employés[i].nom
             PRENOM.value=employés[i].prenom
             POSTE.value=employés[i].poste

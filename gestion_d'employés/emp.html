@@ -24,26 +24,26 @@
           <div class="field">
             <label for="prenom">Prénom</label>
             <input type="text" id="prenom" name="prenom" placeholder="Entrer le prénom" />
-            <span class="errPrenom"></span>
+            <span id="errPrenom"></span>
           </div>
 
           <div class="field">
             <label for="poste">poste</label>
             <input type="text" id="poste" name="poste" placeholder="Entrer votre poste" />
-            <span class="errPoste"></span>
+            <span id="errPoste"></span>
           </div>
 
           <div class="field">
             <label for="txtsalaire">salaire</label>
             <input type="number" id="salaire" name="salaire" placeholder="Entrer le salaire" />
-            <span class="errSalaire"></span>
+            <span id="errSalaire"></span>
           </div>
         </div>
 
         <div class="actions">
           <button type="button" id="btn_ajouter" class="btn btn-primary">Ajouter Employé</button>
           <button type="button" id="btn_modifier" class="btn btn-secondary">Modifier</button>
-          <input type="number" id="id_mdf" placeholder="id" >
+          <div  id="id_mdf"  ><p>id </p></div>
         </div>
       </form>
       
@@ -78,7 +78,3 @@
   <script src="Emp.js"></script>
 </body>
 </html>
-
-
-
-
