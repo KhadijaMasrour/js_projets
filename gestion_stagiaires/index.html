@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liste des emplyés</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Gestion des stagiares</h1>
+      <h2>Formulaire d’ajout</h2>
+
+      <form>
+        <div class="form-row">
+
+          <div class="field">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" placeholder="Entrer le nom" />
+            <span id="errNom"></span> 
+          </div>
+
+
+          <div class="field">
+            <label for="poste">Groupe </label>
+            <input type="text" id="Groupe" name="Groupe" placeholder="Entrer votre Groupe" />
+            <span id="errPoste"></span>
+          </div>
+
+          <div class="field">
+            <label for="poste">Module</label>
+            <input type="text" id="Module" name="Module" placeholder="Entrer votre Module" />
+            <span id="errPoste"></span>
+          </div>
+
+          <div class="field">
+            <label for="poste">filiere</label>
+            <input type="text" id="Filiere" name="filiere" placeholder="Entrer votre filiere" />
+            <span id="errPoste"></span>
+          </div>
+
+          <div class="notes" style="display: flex; width: 1000px;">
+            <div class="field">
+              <label for="txtsalaire">Cc1</label>
+              <input type="number" id="Cc1" name="Cc1" placeholder="Entrer le Cc1" />
+              <span id="errSalaire"></span>
+            </div>
+
+            <div class="field">
+              <label for="txtsalaire">Cc2</label>
+              <input type="number" id="Cc2" name="Cc2" placeholder="Entrer le Cc2" />
+              <span id="errSalaire"></span>
+            </div>
+
+            <div class="field">
+              <label for="txtsalaire">Cc3</label>
+              <input type="number" id="Cc3" name="Cc3" placeholder="Entrer le Cc3" />
+              <span id="errSalaire"></span>
+            </div>
+          
+            <div class="field">
+              <label for="txtsalaire">Efm</label>
+              <input type="number" id="Efm" name="Efm" placeholder="Entrer le Efm" />
+              <span id="errSalaire"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" id="btn_ajouter" class="btn btn-primary">Ajouter Employé</button>
+          <button type="button" id="btn_modifier" class="btn btn-secondary">Modifier</button>
+          <div  id="id_mdf"  ><p>id </p></div>
+        </div>
+      </form>
+      
+      
+      
+      <div class="table-wrapper">
+        <table id="table_stagiaires">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nom</th>
+              <th>Note</th>
+              <th>Groupe</th>
+              <th>Filiere</th>
+              <th>Module</th>
+              <th>Decision</th>
+              <th>Mention</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tdata">
+
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4"><strong>le salaire maximum</strong></td>
+              <td>
+                <strong id="txtSalaireMax">...</strong> <br />
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

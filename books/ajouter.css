@@ -1,0 +1,63 @@
+body{
+    margin:0;
+    font-family: serif;
+    background: linear-gradient(#000000, #1a0f0f);
+    color:white;
+}
+
+/* NAVBAR */
+.navbar{
+    text-align:center;
+    padding:20px;
+    background:black;
+    color:#f5d58c;
+}
+
+/* BOOKS */
+.books{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:20px;
+    padding:40px;
+}
+
+.book{
+    background:#141414;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(255,215,0,0.2);
+}
+
+.book h3{
+    color:#f5d58c;
+}
+
+.delete{
+    margin-top:10px;
+    background:red;
+    border:none;
+    padding:5px;
+    cursor:pointer;
+}
+
+/* ADD SECTION */
+.add-section{
+    background:#0d0d0d;
+    padding:40px;
+    text-align:center;
+}
+
+.add-section input{
+    padding:10px;
+    margin:10px;
+    background:#222;
+    border:none;
+    color:white;
+}
+
+.add-section button{
+    padding:10px 20px;
+    background:#c49b3d;
+    border:none;
+    cursor:pointer;
+}

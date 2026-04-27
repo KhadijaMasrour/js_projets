@@ -1,0 +1,145 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: serif;
+}
+
+body{
+    background:black;
+    color:white;
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    padding:20px;
+    position:absolute;
+    width:100%;
+    z-index:10;
+}
+
+.navbar ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f") center/cover;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+}
+
+.hero-content{
+    position:relative;
+    text-align:center;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:50px;
+    color:#f5d58c;
+}
+
+.hero p{
+    margin:10px 0;
+    color:#ddd;
+}
+
+.hero button{
+    padding:10px 20px;
+    background:#c49b3d;
+    border:none;
+    cursor:pointer;
+}
+
+/* BOOK IMAGE */
+.hero-book{
+    position:absolute;
+    bottom:0;
+    width:300px;
+    z-index:2;
+    filter: drop-shadow(0 0 20px #000);
+}
+
+/* ABOUT */
+.about{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:80px;
+    background:#0d0d0d;
+}
+
+.about img{
+    width:200px;
+}
+
+.about h2{
+    color:#f5d58c;
+}
+
+/* HOW */
+.how{
+    display:flex;
+    justify-content:space-around;
+    padding:80px;
+    background:#111;
+}
+
+.video{
+    width:200px;
+    height:120px;
+    background:#222;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+}
+
+/* PREVIEW */
+.preview{
+    height:400px;
+    background:url("https://images.unsplash.com/photo-1512820790803-83ca734da794") center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* SIGNUP */
+.signup{
+    background:linear-gradient(#0f3d3e,#051a1a);
+    text-align:center;
+    padding:60px;
+}
+
+.signup input{
+    padding:10px;
+    width:250px;
+}
+
+.signup button{
+    padding:10px 20px;
+    background:#c49b3d;
+    border:none;
+}
+
+/* FOOTER */
+footer{
+    background:black;
+    text-align:center;
+    padding:30px;
+}

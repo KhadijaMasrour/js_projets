@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gestion des stagiaires</title>
+</head>
+<body>
+    <div class="container">
+        <form id="form">
+            <div class="title">
+                <h1>Notes des stagiaires</h1>
+            </div>
+            <fieldset>
+                <legend>Nouvelle ligne</legend>
+                <div class="form-row">
+                    <div class="from-lin">
+                        <div type="text" name="id" id="id"><p>id</p></div>
+                    </div>
+                    <div class="from-lin">
+                        <label for="nom">Nom :</label>
+                        <input type="text" name="nom" id="nom">
+                        <span class="error-msg" id="nom-error"></span>
+                    </div>
+                    <div class="from-lin">
+                        <label for="groupe">Groupe :</label>
+                        <select name="groupe" id="groupe">
+                            <option value="DD101">DD101</option>
+                            <option value="DD102">DD102</option>
+                            <option value="DD103">DD103</option>
+                            <option value="DD104">DD104</option>
+                            <option value="DD105">DD105</option>
+                            <option value="DD106">DD106</option>
+                            <option value="DD107">DD107</option>
+                        </select>
+                    </div>
+                    <button id="lire">Lire</button>
+                </div>
+                
+                <div class="form-row">
+                    <label for="module">Module :</label>
+                    <input type="radio" name="matiere" value="PHP" id="PHP" checked/>
+                    <label for="PHP">PHP</label>
+                    <input type="radio" name="matiere" value="JAVASCRIPT" id="JAVASCRIPT"/>
+                    <label for="PHP">JAVASCRIPT</label>
+                    <input type="radio" name="matiere" value="POO" id="POO" checked/>
+                    <label for="PHP">POO</label>
+                    <input type="radio" name="matiere" value="ALGORITHME" id="ALGORITHME" checked/>
+                    <label for="PHP">ALGORITHME</label>
+                    
+                </div>
+                <div class="form-row note">
+                    <h3 > NOTES :</h3>
+
+                    <label for="Cc1">CC1 :</label>
+                    <input type="number" name="CC1" id="Cc1">
+                    <span class="error-msg" id="note-error"></span>
+
+                    <label for="Cc2">CC2 :</label>
+                    <input type="number" name="CC2" id="Cc2">
+                    <span class="error-msg" id="CC2-error"></span>
+
+                    <label for="Cc3">CC3 :</label>
+                    <input type="number" name="CC3" id="Cc3">
+                    <span class="error-msg" id="note-error"></span>
+
+                    <label for="Efm">EFM :</label>
+                    <input type="number" name="EFM" id="Efm">
+                    <span class="error-msg" id="note-error"></span>
+                </div>
+                <div>
+                    <button id="ajouter" type="submit">Ajouter la note</button>
+                    <button id="save">Enregistrer</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="table-container">
+        <h1>Liste des notes</h1>
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOM</th>
+                    <th>NOTE</th>
+                    <th>Groupe</th>
+                    <th>Matiere</th>
+                    <th>Decision</th>
+                    <th>Mention</th>
+                    <th>GESTION</th>
+                </tr>
+            </thead>
+            <tbody id="tdata"   >
+                <tr>
+                    <th>1</th>
+                    <td>Alami Hicham</td>
+                    <td class="note">8</td>
+                    <td>DD104</td>
+                    <td>POO</td>
+                    <td>Redoublant</td>
+                    <td>---</td>
+                    <td><button class="btn-supprimer">Supprimer</button>
+                        <button class="btn-modifier">modifier</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="2" id="best">LA MEILLEURE NOTE</th>
+                    <td id="best-note"></td>
+                    <td colspan="5"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

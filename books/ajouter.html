@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Books</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: serif;
+}
+
+body{
+    background: linear-gradient(#000000, #1a0f0f);
+    color:white;
+}
+
+/* NAVBAR */
+.navbar{
+    text-align:center;
+    padding:20px;
+    background:black;
+    color:#f5d58c;
+    font-size:22px;
+}
+
+/* CONTAINER */
+.container{
+    padding:40px;
+}
+
+/* BOOKS GRID */
+#books{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:25px;
+}
+
+/* BOOK CARD */
+.book{
+    background:#141414;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 0 15px rgba(255,215,0,0.2);
+    transition:0.3s;
+}
+
+.book:hover{
+    transform:translateY(-10px) scale(1.03);
+}
+
+.book img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.book-content{
+    padding:15px;
+}
+
+.book h3{
+    color:#f5d58c;
+    margin-bottom:5px;
+}
+
+.book p{
+    font-size:13px;
+    color:#ccc;
+    margin:3px 0;
+}
+
+.delete{
+    margin-top:10px;
+    width:100%;
+    padding:8px;
+    background:red;
+    border:none;
+    cursor:pointer;
+    color:white;
+    border-radius:5px;
+}
+
+/* FORM */
+.form-box{
+    margin-top:60px;
+    max-width:400px;
+    background:#111;
+    padding:20px;
+    border-radius:10px;
+}
+
+.form-box h2{
+    color:#f5d58c;
+    margin-bottom:10px;
+}
+
+.form-box input,
+.form-box textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    background:#222;
+    border:none;
+    color:white;
+}
+
+.form-box button{
+    width:100%;
+    padding:10px;
+    background:#c49b3d;
+    border:none;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">📚 Bibliothèque</div>
+
+<div class="container">
+
+<div id="books">
+
+<!-- 1 -->
+<div class="book">
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794">
+<div class="book-content">
+<h3>Atomic Habits</h3>
+<p>Auteur: James Clear</p>
+<p>Création: 2018</p>
+<p>Publication: 2019</p>
+<p>Développement personnel.</p>
+<button class="delete">Supprimer</button>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="book">
+<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
+<div class="book-content">
+<h3>Rich Dad Poor Dad</h3>
+<p>Auteur: Robert Kiyosaki</p>
+<p>Création: 1997</p>
+<p>Publication: 2000</p>
+<p>Finance personnelle.</p>
+<button class="delete">Supprimer</button>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="book">
+<img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d">
+<div class="book-content">
+<h3>The Alchemist</h3>
+<p>Auteur: Paulo Coelho</p>
+<p>Création: 1988</p>
+<p>Publication: 1993</p>
+<p>Roman inspirant.</p>
+<button class="delete">Supprimer</button>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="book">
+<img src="https://images.unsplash.com/photo-1473755504818-b72b6dfdc226">
+<div class="book-content">
+<h3>Deep Work</h3>
+<p>Auteur: Cal Newport</p>
+<p>Création: 2016</p>
+<p>Publication: 2017</p>
+<p>Focus et productivité.</p>
+<button class="delete">Supprimer</button>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="book">
+<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
+<div class="book-content">
+<h3>Think and Grow Rich</h3>
+<p>Auteur: Napoleon Hill</p>
+<p>Création: 1937</p>
+<p>Publication: 1937</p>
+<p>Succès et mindset.</p>
+<button class="delete">Supprimer</button>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="book">
+<img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66">
+<div class="book-content">
+<h3>Start With Why</h3>
+<p>Auteur: Simon Sinek</p>
+<p>Création: 2009</p>
+<p>Publication: 2010</p>
+<p>Leadership.</p>
+<button class="delete">Supprimer</button>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="book">
+<img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570">
+<div class="book-content">
+<h3>Zero to One</h3>
+<p>Auteur: Peter Thiel</p>
+<p>Création: 2014</p>
+<p>Publication: 2015</p>
+<p>Startup & innovation.</p>
+<button class="delete">Supprimer</button>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="book">
+<img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93">
+<div class="book-content">
+<h3>Ikigai</h3>
+<p>Auteur: Hector Garcia</p>
+<p>Création: 2016</p>
+<p>Publication: 2017</p>
+<p>Sens de la vie.</p>
+<button  class="delete">Supprimer</button>
+</div>
+</div>
+
+</div>
+
+<!-- FORM -->
+<div class="form-box">
+<h2>Ajouter un livre</h2>
+<input id="nom" type="text" placeholder="Nom du livre">
+<input id="auteur" type="text" placeholder="Auteur">
+<input  id="dcreat" type="date">
+<input id="dpub" type="date">
+<input id="img" type="text" placeholder="URL image">
+<textarea id="description" placeholder="Description"></textarea>
+<button id="ajouter">Ajouter</button>
+</div>
+
+</div>
+<script src="book.js"></script>
+
+</body>
+</html>
