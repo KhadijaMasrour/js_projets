@@ -83,22 +83,24 @@ function afficher(){
     let conten="";
     for(i=0;i<books.length;i++){
         conten+=`
-            <div class="book">
+            <div  class="book">
                 <div class="ID">${books[i].id=i+1}</div>
-                <img src="${books[i].Img}">
-                <div class="book-content">
+                <img  src="${books[i].Img}">
+                <div onclick="remlpire(${books[i].id})" class="book-content">
                     <h3>${books[i].nom}</h3>
                     <p>Auteur: ${books[i].auteur}</p>
                     <p>Création:${books[i].Date_c}</p>
                     <p>Publication: ${books[i].Date_p}</p>
                     <p>${books[i].Description}</p>
-                    <button class="delete" onclick="supprimer(${books[i].id})">Supprimer</button>
+                        <button class="delete" onclick="supprimer(${books[i].id})">Supprimer</button>
                 </div>
             </div>
         `
         
     }
     document.getElementById("books").innerHTML=conten
+
+    
 }
 
 
@@ -137,5 +139,42 @@ function supprimer(Id){
         }
     }
     afficher()
+}
+
+function modifier(id){
+    for(i=0;i<books.length;i++){
+        if(id==books[i].id){
+            books[i].nom=Nom.value
+            books[i].auteur=Auteur.value
+            books[i].Date_c=date_c.value
+            books[i].Date_p=date_p.value
+            books[i].Img=img.value
+            books[i].Description=dscrp.value
+            
+        }
+    }
+    afficher()
+    contt=`<button id="btn-mdf" onclick="modifier(${books[i].id})">modifier</button>`
+    document.getElementById("for-inp").innerHTML-=contt
+}
+
+function remlpire(id){
+    let cont=" ";
+    for(i=0;i<books.length;i++){
+        if(id==books[i].id){
+            ID=books[i].id
+            Nom.value=books[i].nom
+            Auteur.value=books[i].auteur
+            date_c.value=books[i].Date_c
+            date_p.value=books[i].Date_p
+            img.value=books[i].Img
+            dscrp.value=books[i].Description
+            cont=`
+                <button id="btn-mdf" onclick="modifier(${books[i].id})">modifier</button>
+            `
+            document.getElementById("lm").innerHTML=cont
+            document.getElementById("lm").style.display="block"
+        }
+    }
 }
 

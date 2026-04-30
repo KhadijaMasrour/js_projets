@@ -41,6 +41,7 @@ body{
 /* BOOK CARD */
 /* BOOK CARD */
 .book{
+    margin-top: 50px;
     background:#141414;
     border-radius:18px;
     overflow:hidden;
@@ -148,13 +149,18 @@ body{
    align-items: center;
 }
 #bt button{
-   width: 100px;
+    margin-top: 50px;
+   width: 150px;
    height: 30px;
+   background:#c49b3d;
+    border:none;
+    cursor:pointer;
+    border-radius: 8px;
 }
 /* FORM */
 .form-box{
     margin-top:60px;
-    max-width:400px;
+    max-width:800px;
     background:#111;
     padding:20px;
     border-radius:10px;
@@ -171,7 +177,7 @@ a{
 
 .form-box input,
 .form-box textarea{
-    width:100%;
+    width:380px;
     padding:10px;
     margin:10px 0;
     background:#222;
@@ -185,6 +191,11 @@ a{
     background:#c49b3d;
     border:none;
     cursor:pointer;
+}
+
+#lm{
+    display: none;
+    width: 100% ;
 }
 
 .navbar{
@@ -205,7 +216,29 @@ a{
 .ID{
     display: none;
 }
+.for-inp{
+    display: flex;
+    gap: 35px;
+}
 
+#for-inp{
+    display: flex;
+    gap: 35px;
+}
+.formm{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#titre{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.Nt{
+    display: none;
+}
 </style>
 </head>
 
@@ -224,20 +257,33 @@ a{
 
 <div class="container">
 
-<div id="books">
-    <div id="bt"><button id="btn_aff">SHOW BOOKS</button></div>
-</div>
+
 
 <!-- FORM -->
-<div class="form-box">
-<h2>Ajouter un livre</h2>
-<input id="nom" type="text" placeholder="Nom du livre">
-<input id="auteur" type="text" placeholder="Auteur">
-<input  id="dcreat" type="number">
-<input id="dpub" type="number">
-<input id="img" type="text" placeholder="URL image">
-<textarea id="description" placeholder="Description"></textarea>
-<button id="ajouter">Ajouter</button>
+<div class="formm">
+    <div class="form-box">
+    <div id="titre"><h2>Ajouter un livre</h2></div> 
+    <div class="for-inp">
+        <input id="nom" type="text" placeholder="Nom du livre">
+        <input id="auteur" type="text" placeholder="Auteur">
+    </div>
+    <div class="for-inp">
+        <input  id="dcreat" type="number" placeholder="Date du création">
+        <input id="dpub" type="number" placeholder="Date du publication">
+    </div>
+    <div class="for-inp">
+        <input id="img" type="text" placeholder="URL image">
+        <textarea id="description" placeholder="Description"></textarea>
+    </div>
+    <div id="for-inp">
+        <button id="ajouter">Ajouter</button>
+        <div id="lm"></div>
+    </div>
+</div>
+</div>
+
+<div id="books">
+    <div id="bt"><button id="btn_aff">SHOW BOOKS > </button></div>
 </div>
 
 </div>
