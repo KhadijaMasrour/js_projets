@@ -25,7 +25,7 @@ document.getElementById("btn_modifier").addEventListener("click",modifier_infos_
 
 
 function calculerNote(){
-    NOTE = (Number(CC1.value) + Number(CC2.value) + Number(CC3.value) + Number(EFM.value)) / 4;
+    NOTE = ((Number(CC1.value) + Number(CC2.value) + Number(CC3.value) ) / 3 )*0.6+ Number(EFM.value)*0.4 ;
 
     if(NOTE >= 10){
         DECISION = "Admis";

@@ -74,12 +74,10 @@ let books = [
 
 ];
 
-localStorage.setItem("books", JSON.stringify(books));
 
+document.getElementById("bth").addEventListener("click",read())
 
-document.getElementById("btn_aff").addEventListener("click",afficher)
-
-function afficher(){
+function read(){
     let conten="";
     for(i=0;i<books.length;i++){
         conten+=`
@@ -92,7 +90,6 @@ function afficher(){
                     <p>Création:${books[i].Date_c}</p>
                     <p>Publication: ${books[i].Date_p}</p>
                     <p>${books[i].Description}</p>
-                    <button class="delete" onclick="supprimer(${books[i].id})">Supprimer</button>
                 </div>
             </div>
         `
@@ -100,42 +97,3 @@ function afficher(){
     }
     document.getElementById("books").innerHTML=conten
 }
-
-
-
-
-
-Nom=document.getElementById("nom");
-Auteur=document.getElementById("auteur");
-date_c=document.getElementById("dcreat");
-date_p=document.getElementById("dpub");
-img=document.getElementById("img");
-dscrp=document.getElementById("description");
-
-document.getElementById("ajouter").addEventListener("click",ajouter);
-
-
-function ajouter(e){
-    e.preventDefault()
-    let new_book={
-        nom:Nom.value,
-        auteur:Auteur.value,
-        Date_c:date_c.value,
-        Date_p:date_p.value,
-        Img:img.value,
-        Description:dscrp.value
-    }
-    books.push(new_book)
-    afficher()
-}
-
-
-function supprimer(Id){
-    for(let i = 0 ; i < books.length ; i++){
-        if(Id==books[i].id){
-            books.splice(i,1);
-        }
-    }
-    afficher()
-}
-

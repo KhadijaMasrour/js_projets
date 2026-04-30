@@ -108,8 +108,9 @@ Montant_totale=function(idCommande){
         for(let j=0; j < clients[i].commandes.length;j++){
             if(idCommande==clients[i].commandes[j].id){
                 for(k=0 ; k<clients[i].commandes[j].produits.length;k++ ){
-                    return total+=clients[i].commandes[j].produits[k].prix*clients[i].commandes[j].produits[k].quantite
+                   total += clients[i].commandes[j].produits[k].prix*clients[i].commandes[j].produits[k].quantite
                 }
+                return total
             }
         }
     }
@@ -130,8 +131,8 @@ function afficherCommandesNonPayees() {
 function ajouterCommande(idClient, nouvelleCommande){
     for(i=0;i<clients.length;i++){
        if(idClient==clients[i].id){
-            return clients[i].commandes.push(nouvelleCommande)
-            }
+            clients[i].commandes.push(nouvelleCommande)
+        }
     }
 }
 
@@ -141,7 +142,7 @@ function  modifierQuantite(idCommande, idProduit, nouvelleQuantite){
             if(idCommande==clients[i].commandes[j].id){
                 for(k=0 ; k<clients[i].commandes[j].produits.length;k++ ){
                     if(idProduit==clients[i].commandes[j].produits[k].id){
-                        return clients[i].commandes[j].produits[k]=nouvelleQuantite
+                        clients[i].commandes[j].produits[k].quantite=nouvelleQuantite
                     }
                 }   
             }
@@ -154,7 +155,6 @@ function supprimerCommande(idCommande){
         for(let j=0; j < clients[i].commandes.length;j++){
             if(idCommande==clients[i].commandes[j].id){
                 clients[i].commandes.splice(j,1)
-                return clients[i].commandes
             }
         }
     }
