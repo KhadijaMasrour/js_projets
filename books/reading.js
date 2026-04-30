@@ -82,7 +82,7 @@ function read(){
     for(i=0;i<books.length;i++){
         conten+=`
             <div class="book">
-                <div>${books[i].id=i+1}</div>
+                <div class="ID">${books[i].id=i+1}</div>
                 <img src="${books[i].Img}">
                 <div class="book-content">
                     <h3>${books[i].nom}</h3>
