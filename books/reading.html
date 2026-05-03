@@ -258,6 +258,32 @@ a{
     font-size: 14px;
 }
 
+/* FILTER BAR */
+.filter-box{
+    display:flex;
+    gap:15px;
+    margin-bottom:30px;
+    background:#111;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(255,215,0,0.08);
+}
+
+.filter-box select{
+    padding:10px 15px;
+    background:#1d1d1d;
+    color:white;
+    border:none;
+    border-radius:8px;
+    outline:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.filter-box select:hover{
+    background:#2a2a2a;
+}
+
 </style>
 </head>
 
@@ -273,6 +299,22 @@ a{
 </header>
 
 <div class="nav"> Bibliothèque</div>
+
+<div class="filter-box">
+
+    <select onchange="choisiAuteur(this.value)" id="filterAuteur">
+        <option value="all">Tous les auteurs</option>
+    </select>
+
+    <select onchange="filterYear(this.value)" id="filterYear">
+        <option value="default">Trier par années</option>
+        <option value="new">Du plus récent </option>
+        <option value="old">Du plus ancien </option>
+        <option value="newTo">Du plus récent au plus ancien</option>
+        <option value="oldTo">Du plus ancien au plus récent</option>
+    </select>
+
+</div>
 
 <div class="container">
 

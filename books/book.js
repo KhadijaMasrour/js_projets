@@ -68,11 +68,13 @@ function ajouter(e) {
 
 // ====== DELETE BOOK ======
 function supprimer(id) {
-    books = books.filter(book => book.id !== id);
+    if(confirm("Voulez vous supprimer cet enregistrement ?")==true){
+        books = books.filter(book => book.id !== id);
 
-    localStorage.setItem("books", JSON.stringify(books));
+        localStorage.setItem("books", JSON.stringify(books));
 
-    afficher();
+        afficher();
+    }
 }
 
 // ====== FILL INPUTS FOR UPDATE ======
