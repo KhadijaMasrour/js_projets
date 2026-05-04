@@ -116,14 +116,13 @@ function filterYear(val){
         });
     }
 
-    // 📌 NEW: من القديم إلى الجديد
+   
     else if(val == "oldTo"){
         filteredBooks = [...books].sort((a, b) => {
             return Number(a.Date_p) - Number(b.Date_p);
         });
     }
 
-    // 📌 NEW: من الجديد إلى القديم (باقي عندك)
     else if(val == "newTo"){
         filteredBooks = [...books].sort((a, b) => {
             return Number(b.Date_p) - Number(a.Date_p);
