@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liste des emplyés</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Gestion des stagiares</h1>
+      <h2>Formulaire d’ajout</h2>
+
+      <form>
+        <div class="form-row">
+
+          <div class="field">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" placeholder="Entrer le nom" />
+            <span id="errNom"></span> 
+          </div>
+
+
+          <div class="field">
+            <label for="poste">Téléphone </label>
+            <input type="tel" id="Groupe" name="Groupe" placeholder="Entrer votre numéro du téléphone" />
+            <span id="errPoste"></span>
+          </div>
+
+          <div class="field">
+            <label for="poste">Spécialité</label>
+            <input type="text" id="Module" name="Module" placeholder="Entrer la spécialité" />
+            <span id="errPoste"></span>
+          </div>
+
+          <div class="field">
+            <label for="poste">Date du rendez_vous</label>
+            <input type="date" id="Filiere" name="filiere" placeholder="Entrer votre filiere" />
+            <span id="errPoste"></span>
+          </div>
+
+            
+
+        <div class="actions">
+          <button type="button" id="btn_ajouter" class="btn btn-primary">Ajouter rendez-vous</button>
+          <button type="button" id="btn_modifier" class="btn btn-secondary">Modifier</button>
+          <div  id="id_mdf"  ><p>id </p></div>
+        </div>
+      </form>
+      
+      
+      
+      <div class="table-wrapper">
+        <table id="table_stagiaires">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Téléphone</th>
+              <th>Spécialité</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tdata">
+
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4"><strong>le salaire maximum</strong></td>
+              <td>
+                <strong id="txtSalaireMax">...</strong> <br />
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
