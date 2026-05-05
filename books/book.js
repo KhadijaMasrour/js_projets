@@ -37,7 +37,7 @@ function vrf_personne(){
 }
 
 function connecter(e){
-    console.log("ok")
+    console.log(personnes)
     e.preventDefault();
 
     let ajout=`
