@@ -306,6 +306,106 @@ a{
     color: #777;
     font-size: 14px;
 }
+
+.souform{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span{
+    font-size: x-small;
+    font-weight: 100;
+}
+
+.Formule{
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    height: 400px;
+
+}
+
+.form-bo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.form-bo h2{
+    color:#f5d58c;
+    margin-bottom:10px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.form-bo input,
+.form-bo textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    background:#222;
+    border:none;
+    color:white;
+}
+
+.form-bo button{
+    width:100%;
+    padding:10px;
+    background:#c49b3d;
+    border:none;
+    border-radius: 10px;
+    cursor:pointer;
+}
+
+.switch{
+    margin-top:15px;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+}
+
+.switch a{
+    color:#f5d58c;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.switch a:hover{
+    text-decoration:underline;
+    color:#fff;
+}
+
+.auth-message{
+    margin-top:25px;
+    width:100%;
+    background:#161616;
+    border:1px solid #c49b3d;
+    border-radius:12px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 0 15px rgba(255,215,0,0.1);
+}
+
+.auth-message h3{
+    color:#f5d58c;
+    margin-bottom:10px;
+    font-size:20px;
+}
+
+.auth-message p{
+    color:#ccc;
+    font-size:14px;
+    line-height:1.6;
+}
+
 </style>
 </head>
 
@@ -315,44 +415,42 @@ a{
     <h2 class="logo"> BookWorld</h2>
     <ul>
         <a href="index.html"><li>Home</li></a>
-        <a href="ajouter.html"><li>Ajouter</li></a>
-        <a href="login.html"><li>Login</li></a>
+        <a href="ajouter.html"><li>Ajouter-Livre</li></a>
+        <a href="reading.html"><li>Reading</li></a>
         <a href="signup.html"><li>Sign up</li></a>
     </ul>
 </header>
 
 <div class="nav"> Bibliothèque</div>
 
-<div class="container">
+<div class="container" id="container">
 
+<div class="souform">
+    <div class="Formule" id="Formulaire">
+    <div class="form-bo">
+        <div id="titre"><h2>LOG IN</h2></div>
+        <input id="email" type="email" placeholder="Adresse Email">
+        <span id="erremail"></span>
+        <input id="password" type="password" placeholder="Mot de pass" >
+        <span id="errpassword"></span>
+        <button id="conecter">se connecter</button>
+        <h6 class="switch">
+            You don't have an account? 
+            <a href="signup.html">Sign up</a>
+        </h6>
+        <div class="auth-message">
+            <h3>Accès Protégé</h3>
 
+            <p>
+                Pour ajouter, modifier ou supprimer des livres,
+                vous devez d'abord vous connecter à votre compte.
+            </p>
+        </div>
+    </div>
+</div>
 
 <!-- FORM -->
-<div class="formm">
-    <div class="form-box">
-    <div id="titre"><h2>Ajouter un livre</h2></div> 
-    <div class="for-inp">
-        <input id="nom" type="text" placeholder="Nom du livre">
-        <input id="auteur" type="text" placeholder="Auteur">
-    </div>
-    <div class="for-inp">
-        <input  id="dcreat" type="number" placeholder="Date du création">
-        <input id="dpub" type="number" placeholder="Date du publication">
-    </div>
-    <div class="for-inp">
-        <input id="img" type="text" placeholder="URL image">
-        <textarea id="description" placeholder="Description"></textarea>
-    </div>
-    <div id="for-inp">
-        <button id="ajouter">Ajouter</button>
-        <div id="lm"></div>
-    </div>
-</div>
-</div>
 
-<div id="books">
-    <div id="bt"><button id="btn_aff">SHOW BOOKS > </button></div>
-</div>
 
 </div>
 <script src="book.js"></script>

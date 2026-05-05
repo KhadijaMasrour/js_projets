@@ -1,4 +1,5 @@
-// ====== GET DATA FROM LOCALSTORAGE ======
+let personnes = JSON.parse(localStorage.getItem("personnes")) || [];
+
 let books = JSON.parse(localStorage.getItem("books")) || [];
 
 // ====== SELECT INPUTS ======
@@ -9,10 +10,108 @@ let date_p = document.getElementById("dpub");
 let img = document.getElementById("img");
 let dscrp = document.getElementById("description");
 
-// ====== DISPLAY BUTTON ======
+
+let Email = addo("email");
+let Password = addo("password");
+
+function addo(id){
+    return document.getElementById(id);
+}
+
+document.getElementById("conecter").addEventListener("click", connecter);
+
+function vrf_personne(){
+
+    for(let i = 0; i < personnes.length; i++){
+
+        
+        if(
+            Email.value === personnes[i].email &&
+            Password.value === personnes[i].password
+        ){
+            return "yes";
+        }
+    }
+
+    return "no";
+}
+
+function connecter(e){
+    console.log("ok")
+    e.preventDefault();
+
+    let ajout=`
+        <div class="formm">
+            <div class="form-box">
+            <div id="titre"><h2>Ajouter un livre</h2></div> 
+            <div class="for-inp">
+                <input id="nom" type="text" placeholder="Nom du livre">
+                <input id="auteur" type="text" placeholder="Auteur">
+            </div>
+            <div class="for-inp">
+                <input  id="dcreat" type="number" placeholder="Date du création">
+                <input id="dpub" type="number" placeholder="Date du publication">
+            </div>
+            <div class="for-inp">
+                <input id="img" type="text" placeholder="URL image">
+                <textarea id="description" placeholder="Description"></textarea>
+            </div>
+            <div id="for-inp">
+                <button id="ajouter">Ajouter</button>
+                <div id="lm"></div>
+            </div>
+        </div>
+        </div>
+
+        <div id="books">
+            <div id="bt"><button id="btn_aff">SHOW BOOKS > </button></div>
+        </div>
+    `;
+
+    let test = vrf_personne();
+
+    if(test === "yes"){
+
+        document.getElementById("container").innerHTML = ajout;
+
+        // ===== SELECT INPUTS =====
+        Nom = document.getElementById("nom");
+        Auteur = document.getElementById("auteur");
+        date_c = document.getElementById("dcreat");
+        date_p = document.getElementById("dpub");
+        img = document.getElementById("img");
+        dscrp = document.getElementById("description");
+
+        // ===== EVENTS =====
+        document
+        .getElementById("btn_aff")
+        .addEventListener("click", afficher);
+
+        document
+        .getElementById("ajouter")
+        .addEventListener("click", ajouter);
+
+    }else{
+
+        document.getElementById("erremail").textContent =
+        "Email ou Password incorrect";
+
+        document.getElementById("erremail").style.color = "red";
+
+        Email.style.border = "1px solid red";
+
+        Password.style.border = "1px solid red";
+    }
+}
+
+// ====== GET DATA FROM LOCALSTORAGE ======
+
+
+
+
 document.getElementById("btn_aff").addEventListener("click", afficher);
 
-// ====== SHOW BOOKS ======
+
 function afficher() {
     let conten = "";
 
@@ -42,7 +141,6 @@ function afficher() {
     document.getElementById("books").innerHTML = conten;
 }
 
-// ====== ADD BOOK ======
 document.getElementById("ajouter").addEventListener("click", ajouter);
 
 function ajouter(e) {

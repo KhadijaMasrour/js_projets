@@ -10,7 +10,7 @@ function addo(id){
 }
 
 document.getElementById("conecter")
-.addEventListener("click", ajouter);
+.addEventListener("click", connecter);
 
 function vrf_personne(){
 
@@ -28,7 +28,7 @@ function vrf_personne(){
     return "no";
 }
 
-function ajouter(e){
+function connecter(e){
 
     e.preventDefault();
 

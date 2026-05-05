@@ -17,4 +17,3 @@ function valider(){
     }
 }
 
-valider()
