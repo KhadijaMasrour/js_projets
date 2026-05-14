@@ -1,6 +1,7 @@
 let NOTE = 0;
 let DECISION = "";
 let MENTION = "";
+let red_class="";
 stagiaires=[
     {nom:"khadija",Cc1:17,Cc2:18,Cc3:18,Efm:18,note:18,groupe:"dd102",filiere:"DEV",Module:"algorithme",decision:"Admis",mention:"Très-Bien"},
     {nom:"Samira",Cc1:17,Cc2:18,Cc3:18,Efm:18,note:18,groupe:"dd101" ,filiere:"DEV",Module:"POO",decision:"Admis",mention:"Très-Bien"}
@@ -16,10 +17,12 @@ let CC2=document.getElementById("Cc2")
 let CC3=document.getElementById("Cc3")
 let EFM=document.getElementById("Efm")
 let ID=document.getElementById("id_mdf")
+let SEARCH=document.getElementById("search")
 
 
 document.getElementById("btn_ajouter").addEventListener("click",ajouter_employé)
 document.getElementById("btn_modifier").addEventListener("click",modifier_infos_employé)
+document.getElementById("btn_rechercher").addEventListener("click",Search)
 
 
 
@@ -29,9 +32,10 @@ function calculerNote(){
 
     if(NOTE >= 10){
         DECISION = "Admis";
-
+        red_class="admis";
         if(NOTE <= 12){
             MENTION = "Passable";
+            
         } else if(NOTE <= 14){
             MENTION = "Assez-Bien";
         } else if(NOTE <= 16){
@@ -42,7 +46,10 @@ function calculerNote(){
     } else {
         DECISION = "Redoubler";
         MENTION = "---";
+        red_class="nonadmis";
     }
+
+    
 }
 
 function ajouter_employé(e){
@@ -152,6 +159,12 @@ function modifier_infos_employé(e){
 function afficher(){
     let content=" ";
     for(i=0;i<stagiaires.length;i++){
+        
+        if(stagiaires[i].note >= 10){
+            red_class="admis";
+        } else {
+            red_class="nonadmis";
+        }
         content +=`<tr>
             <td>${ stagiaires[i].id=i+1}</td>
             <td>${stagiaires[i].nom}</td>
@@ -159,8 +172,8 @@ function afficher(){
             <td>${stagiaires[i].groupe}</td>
             <td>${stagiaires[i].filiere}</td>
             <td>${stagiaires[i].Module}</td>
-            <td>${stagiaires[i].decision}</td>
-            <td>${stagiaires[i].mention}</td>
+            <td class="${red_class}">${stagiaires[i].decision}</td>
+            <td >${stagiaires[i].mention}</td>
             <td><button onclick="supprimer_employé(event)"  class="btn-delete" id=${stagiaires[i].id}>supprimer</button></td>
         </tr>`
     }
@@ -221,5 +234,43 @@ function supprimer_employé(event){
             afficher();
         }
     }
+}
+
+let rechercher;
+
+
+
+
+function Search(){
+    rechercher = stagiaires.filter((item)=>{
+
+        if(SEARCH.value == item.id || SEARCH.value == item.nom || SEARCH.value == item.groupe || SEARCH.value == item.filiere || SEARCH.value == item.Module || SEARCH.value == item.decision || SEARCH.value == item.mention){
+            return item;
+        }
+
+    });
+    console.log(rechercher);
+    let ctn="";
+    for(i=0;i<rechercher.length;i++){
+        if(rechercher[i].note >= 10){
+            red_class="admis";
+        } else {
+            red_class="nonadmis";
+        }
+         ctn+=`
+        <tr>
+            <td>${rechercher[i].id}</td>
+            <td>${rechercher[i].nom}</td>
+            <td>${rechercher[i].prenom}</td>
+            <td>${rechercher[i].groupe}</td>
+            <td>${rechercher[i].filiere}</td>
+            <td>${rechercher[i].Module}</td>
+            <td class="${red_class}">${rechercher[i].decision}</td>
+            <td>${rechercher[i].mention}</td>
+        </tr>`
+    }
+
+    document.getElementById("tdat").innerHTML=ctn;
+    
 }
 

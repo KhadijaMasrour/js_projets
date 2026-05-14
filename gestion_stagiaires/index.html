@@ -103,6 +103,43 @@
             </tr>
           </tfoot>
         </table>
+
+        <div class="field">
+            <label for="search">search</label>
+            <input type="text" id="search" name="search" placeholder=" search" />
+            <span id="errSearch"></span>
+          </div>
+        </div>
+
+      <button type="button" id="btn_rechercher" class="btn btn-primary">Rechercher</button>
+
+      <div class="table-wrapper">
+        <table id="table_employés">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nom</th>
+              <th>Note</th>
+              <th>Groupe</th>
+              <th>Filiere</th>
+              <th>Module</th>
+              <th>Decision</th>
+              <th>Mention</th>
+            </tr>
+          </thead>
+          <tbody id="tdat">
+
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4"><strong>le salaire maximum</strong></td>
+              <td>
+                <strong id="txtSalaireMax">...</strong> <br />
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+
       </div>
   </div>
   <script src="script.js"></script>

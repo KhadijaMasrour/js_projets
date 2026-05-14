@@ -49,17 +49,14 @@ class Rendez_vous{
     }
     est_valide() {
         if(valider()=="yes"){
-            let today = new Date().toISOString().split("T")[0];
+            
+            let today = new Date();
             if(this.ttel>=8 && this.tdate >= today){
-                nv_objt={
-                    nom:this.tnom,
-                    nom:this.ttel,
-                    nom:this.tspe,
-                    nom:this.tdate,
-                }
-                infos.push(nv_objt)
-                return "yes"
+                
+                return true
             }
+        }else{
+            return false
         }
     }
 
@@ -71,7 +68,7 @@ class Rendez_vous{
                 <td>${this.ttel}</td>
                 <td>${this.tspe}</td>
                 <td>${this.tdate}</td>
-                <td><button class="btn-delete" onclick="supprimer()">supprimer</button></td>
+                <td><button class="btn-delete" onclick="supprimer(e)">supprimer</button></td>
             </tr>
         `
         addobjet("tdata").innerHTML=content
@@ -81,6 +78,28 @@ class Rendez_vous{
     }
 }
 
-R1= new Rendez_vous("khadija","06070504","02/06/2026","TETE");
-R1.est_valide();
-R1.toHtml()
+let r1= new Rendez_vous(Nom.value,Tel.value,Date.value,Spe.value);
+
+
+function ajouter(){
+    if(r1.est_valide()=="yes"){
+        nv_rnd={
+            nom:Nom.value,
+            tel:Tel.value,
+            spe:Spe.value,
+            date:Date.value,
+        }
+        redez_vous.push(nv_rnd)
+        r1.toHtml()
+    }
+
+}
+
+
+function supprimer(e){
+    if(e.target.classList.contains("btn-delete")){
+        e.target.parentElement.parentElement.remove()
+    }
+}
+
+

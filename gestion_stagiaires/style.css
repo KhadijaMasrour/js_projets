@@ -27,7 +27,12 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       padding: 28px;
     }
-
+    .admis{
+      color: rgb(5, 151, 17);
+    }
+    .nonadmis{
+      color: rgb(165, 7, 7) ;
+    }
     h1 {
       text-align: center;
       margin-bottom: 25px;
